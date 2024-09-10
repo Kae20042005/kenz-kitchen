@@ -4,9 +4,9 @@ from django.shortcuts import render
 
 def show_main(request):
     context = {
-        'menu' : 'Japanese Cheese Cake',
-        'price': 'RpXX.XXX',
-        'desc': 'Special cheese cake from Japan'
+        "appName" : "Ken'z Kitchen",
+        "nama": "Farrel Ahmad Ilyasa",
+        "kelas": "PBP E"
     }
 
     return render(request, "main.html", context)
