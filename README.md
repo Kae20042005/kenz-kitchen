@@ -1,4 +1,5 @@
 === Tugas 2 ===
+
 Jawaban nomor 1:
 1) Membuat sebuah proyek Django baru, untuk membuat sebuah proyek Django baru saya melakukan inisiasi sebuah proyek Django dengan cara membuat direktori, mengaktifkan Virtual Enviroment, menyaipkan Depencencies dalam sebuah file yaitu requirements.txt yang nantinya akan di dwonload dengan python enviroment, kemudian membuat proyek Django dengan comman "startproject", yang kemudian melakukan konfigurasi proyek.
 2) Membuat aplikasi dengan nama main pada proyek tersebut, pembuatan aplikasi ini dapat menggunakan command "python manage.py startapp main" yang nantinya akan membuat direktory baru berupa main yang berisi file penunjang aplikasi main itu tersebut. 
@@ -23,6 +24,7 @@ Jawaban nomor 5:
 Karena model pada Django adalah sebuah kelas yang memetakan sebuah objek dari dunia nyata ke database, sehingga disebut dengan Object-Relational Mapping (ORM)
 
 === Tugas 3 ===
+
 Jawaban nomor 1:
 Data delivery diperlukan implementasinya dalam sebuah platform agar user dapat mengakses suatu data pada platform dalam berbagai lokasi dan perangkat. Selain itu, dengan adanya data delivery, mekanisme pengiriman informasi dapat berjalan secara lancar dan efisien.
 
