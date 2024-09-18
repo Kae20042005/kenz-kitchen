@@ -1,3 +1,4 @@
+=== Tugas 2 ===
 Jawaban nomor 1:
 1) Membuat sebuah proyek Django baru, untuk membuat sebuah proyek Django baru saya melakukan inisiasi sebuah proyek Django dengan cara membuat direktori, mengaktifkan Virtual Enviroment, menyaipkan Depencencies dalam sebuah file yaitu requirements.txt yang nantinya akan di dwonload dengan python enviroment, kemudian membuat proyek Django dengan comman "startproject", yang kemudian melakukan konfigurasi proyek.
 2) Membuat aplikasi dengan nama main pada proyek tersebut, pembuatan aplikasi ini dapat menggunakan command "python manage.py startapp main" yang nantinya akan membuat direktory baru berupa main yang berisi file penunjang aplikasi main itu tersebut. 
@@ -20,3 +21,26 @@ Framework Django dijadikan permulaan pengembangan perangkat lunak karena framewo
 
 Jawaban nomor 5:
 Karena model pada Django adalah sebuah kelas yang memetakan sebuah objek dari dunia nyata ke database, sehingga disebut dengan Object-Relational Mapping (ORM)
+
+=== Tugas 3 ===
+Jawaban nomor 1:
+Data delivery diperlukan implementasinya dalam sebuah platform agar user dapat mengakses suatu data pada platform dalam berbagai lokasi dan perangkat. Selain itu, dengan adanya data delivery, mekanisme pengiriman informasi dapat berjalan secara lancar dan efisien.
+
+Jawaban nomor 2:
+JSON lebih popular dari xml karena beberapa hal, seperti JSON yang lebih ringkas dan memiliki format yang  lebih sederhana jika dibandingkan dengan XML sehingga ukuran data lebih kecil dan lebih mudah dipahami. Selain itu, banyak Bahasa pemrograman modern yang mendukung parsing JSON secara langsung, sedangkan XML memerlukan parser yang lebih komplekas dan memerlukan Langkah tambahan, sehingga parsing JSON lebih cepat dan mudah jika dibandingkan dengan parsing XML.
+
+Jawaban nomor 3:
+method is_valid() pada form Django berfungsi untuk melakukan validasi pada input user sehingga memiliki format yang sesuai.
+
+Jawaban nomor 4:
+csrf_token dapat berfungsi untuk melindungi dari serangan yang berbahaya. Ketika seorang user yang telah diautentikasi menjelajahi webstie, Django membuat sebuah token untuk setiap sesinya. Token ini nanti dapat memastikan bahwa input atau request dari user yang telah di autentikasi dan bukan dari sumber yang berbahaya. Jika kita tidak menambahkan csrf_token, maka Ketika ada user yang telah di autentikasi oleh kita terkena serangan, seorang penyerang tersebut dapat mengubah data user dalam website kita sehingga nantinya data mereka dapat hilang atau bahkan kehilangan saldo.
+
+Jawaban nomor 5:
+1) membuat input form, Pertama-tama saya perlu membuat sebuah file "forms.py" dalam direktori "main" untuk membuat spesifikasi input yang diinginkan (mengimport "models" untuk mendapatkan struktur datanya dan fields untuk menunjukkan fields "model" yang digunakan untuk form. Kemudian, membuat file "create_product_entry.html" pada direktori templates dalam direktori main untuk membuat kerangka tampilan Ketika meminta user input.
+2) menambahkan 4 fungsi views baru untuk melihat objek yang sudah ditambahkan dalam format XML, JSON, XML by ID, dan JSON by ID. Pertama, menambahkan empat fungsi show untuk masing-masing format dalam file "views.py" yang ada pada direktori "main". isi dari fungsi tersebut adalah variabel "data" yang mengumpulkan hasil input user dan mereturn HttpResponse untuk menampilkan data-data tersebut.
+3) Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2. Pertama, import fungsi show masing-masing format pada "urls.py". Kemudian, menambahkan path untuk masing masing fungsi dalam urlpatterns
+
+![postman_xml](https://github.com/user-attachments/assets/797eafef-3e9c-4a55-94e7-49736e093417)
+![postman_json](https://github.com/user-attachments/assets/7e5a62d2-1de9-4000-8b1c-04c1674076a4)
+![postman_xml_id](https://github.com/user-attachments/assets/4d3b4167-76e9-4c1c-86d2-50fdcf667f28)
+![postman_json_id](https://github.com/user-attachments/assets/0ff86db8-4c76-41d4-bccb-18e52c33b925)
