@@ -46,3 +46,27 @@ Jawaban nomor 5:
 ![postman_json](https://github.com/user-attachments/assets/7e5a62d2-1de9-4000-8b1c-04c1674076a4)
 ![postman_xml_id](https://github.com/user-attachments/assets/4d3b4167-76e9-4c1c-86d2-50fdcf667f28)
 ![postman_json_id](https://github.com/user-attachments/assets/0ff86db8-4c76-41d4-bccb-18e52c33b925)
+
+=== Tugas 4 ===
+
+Jawaban nomor 1:
+HttpResponseRedirect() memiliki parameter yang lebih lengkap jika dibandingkan dengan redirect(), sehingga HttpResponseRedirect() dapat melakukan perubahan jika dibandingkan dengan redirect. Namun, karena redirect() memerlukan parameter lebih ringkas, untuk keperluan redirect sederhana akan lebih efektif jika menggunakan redirect().
+
+Jawaban nomor 2:
+Pertama, import "from django.contrib.auth.models import User" pada file "models.py". Kemudian, pada fungsi ProductEntry tambahkan suatu variabel user yang menggunakan "models.ForeignKey" agar product dan user dapat terhubung melalui sebuah relationship. Dengan ini, product yang ada akan bergantung dengan usernya.
+
+Jawaban nomor 3:
+Authentication adalah proses verifikasi siapa penggunanya (login). Authorization adalah pemberian akses terhadap seorang pengguna yang sudah melewati tahap authentication pada web atau app sesuai dengan cakupan akses yang telah ditetapkan. Pada django, kedua konsep ini diterapkan ketika internet melakukan request ke webserver. Dengan ini, user yang masuk ke webserver dapat dipastikan merupakan user yang asli dan juga memiliki batasan akses sesuai dengan yang sudah diberikan.
+
+Jawaban nomor 4:
+Django menggunakan cookies untuk mengingat pengguna yang telah login melalui mekanisme session framework. Ketika pengguna login, Django membuat entri session di server dan mengirimkan cookie sesi ke browser pengguna. Cookie ini menyimpan session ID, yang digunakan untuk mengidentifikasi pengguna di setiap permintaan berikutnya. Dengan cara ini, selama sesi tersebut valid (belum expired atau dihapus), pengguna akan tetap dianggap login.\
+
+Kegunaan lain dari cookies adalah untuk meyimpan preferensi pengguna, melacak aktivitas pengguna, pada e-commerce dapat digunakan untuk keranjang belanja (melacak apa saja yang ditambahkan oleh pengguna), dan dapat digunakan untuk menampilkan iklan yang sesuai dengan minat pengguna.
+
+Tidak semua cookies aman digunakan, misal session ID cookie dapat dicuri oleh orang lain apabila tidak di enkripsi dengan baik. Jika hal ini terjadi, orang lain dapat menggunakan akun yang session IDnya tercuri. Kemudian, cookies dapat digunakan untuk mengirim permintaan berbahaya atas nama pengguna yang sedang login. Selain itu, cookie dapat digunakan untuk mengumpulkan informasi rahasia pengguna tanpa seizin mereka oleh pihak yang kurang bertanggung jawab.
+
+Jawaban nomor 5:
+1) Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar. Untuk melakukan ini, pertama saya membuat tiga fungsi registrasi, login, dan logout pada "views.py" yang ada dalam direktori main. untuk register dan login, saya membuat file html baru untuk masing masing fungsi, dengan ini jika login atau register dilaksanakan akan muncul tampilan yang berbeda. Terakhir, tambahkan routing untuk masing masing fungsi tersebut pada urls.py, sehingga nantinya fungsi dapat saling terhubung dan masing-masing fungsi juga dapat menampilkan tampilan htmlnya masing-masing.
+2) Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal. Pertama, buat dua akun dengan page register. Kemudian, login untuk masing masing akun dan tambahkan tiga dummy data pada page entry.
+3) Menghubungkan model Product dengan User. Pertama, import "from django.contrib.auth.models import User" pada file "models.py". Kemudian, pada fungsi ProductEntry tambahkan suatu variabel user yang menggunakan "models.ForeignKey" agar product dan user dapat terhubung melalui sebuah relationship. Dengan ini, product yang ada akan bergantung dengan usernya.
+4) Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi. Untuk menampilkan data username, dapat diimplementasikan dengan menambahkan object form berupa "AuthenticationForm(data=request.POST)" dalam fungsi "login_user" yang ada di file "views.py". Dengan ini, form dapat digunakan untuk menampilkan user yang melakukan login pada saat itu.
