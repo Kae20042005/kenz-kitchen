@@ -4,11 +4,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core import serializers
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect   # Tambahkan import redirect di baris ini
+from django.shortcuts import render, redirect, reverse   # Tambahkan import redirect di baris ini
 from django.urls import reverse
 from main.forms import ProductEntryForm
 from main.models import ProductEntry
-from django.shortcuts import render
 import datetime
 
 # Create your views here.
@@ -52,6 +51,29 @@ def create_product_entry(request):
 
     context = {'form': form}
     return render(request, "create_product_entry.html", context)
+
+def edit_product(request, id):
+    # Get mood entry berdasarkan id
+    product = ProductEntry.objects.get(pk = id)
+
+    # Set mood entry sebagai instance dari form
+    form = ProductEntryForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    # Get mood berdasarkan id
+    product = ProductEntry.objects.get(pk = id)
+    # Hapus mood
+    product.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
 
 @login_required(login_url='/login')
 def show_main(request):
