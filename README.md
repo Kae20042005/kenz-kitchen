@@ -88,3 +88,20 @@ Flexbox adalah sistem layout satu dimensi yang mengatur elemen secara horizontal
 Jawaban nomor 5:
 1) Implementasikan fungsi untuk menghapus dan mengedit product. Untuk membuat fungsi menghapus dan mengedit product, pertama-tama saya membuat fungsi tersebut dalam "views.py". Untuk fungsi mengedit saya akan hubungkan fungsi tersebut dengan "edit_product.html" untuk tampilan ketika mengedit product. Setelah itu saya tambahkan kedua fungsi tersebut di "urls.py" sehingga dapat terhubung  ke aplikasi utama. Kemudian, saya menambahkan dua button yang dihubungkan dengan kedua fungsi tersebut, yang kemudian di letakkan bersama dengan tabel untuk memperlihatkan produk pada "main.html"
 2) Kustomisasi desain pada template HTML yang telah dibuat pada tugas-tugas sebelumnya menggunakan CSS atau CSS framework. Untuk melakukan kustomisasi, saya menambahkan tailwind ke project utama saya dengan menambahkan script tailwind pada "base.html". Dengan ini, saya bisa melakukan kustomisasi pada aplikasi saya dengan tailwin. Kemudian saya juga menambahkan navigation bar untuk aplikasi utama saya dengan membuat file "navbar.html" pada direktori templates. Isi dari file ini menggunakan template yang sudah ada, kemudian untuk menghubungkan navbar dengan aplikasi utama adalah dengan menambahkan tags "include 'navbar.html'" pada bagian atas setiap sub tampilan (seperti "main.html") sehingga nantinya navbar akan selalu muncul pada bagian atas aplikasi. Kemudian untuk styling yang lainnya, saya menggunakan inline style untuk setiap input form, button, dan text sehingga saya bisa melakukan kustomisasi satu-satu untuk setiap elemen yang ada dalam aplikasi.
+
+== Tugas 6 ==
+
+Jawaban nomor 1:
+JavaScript adalah alat yang sangat kuat dan fleksibel dalam pengembangan aplikasi web, yang memungkinkan pembuatan aplikasi yang interaktif, responsif, dan efisien. Penggunaan JavaScript dapat meningkatkan pengalaman pengguna dan memberikan fungsionalitas tambahan yang penting untuk aplikasi web modern.
+
+Jawaban nomor 2:
+await digunakan agar hasil dari fungsi async dapat dikembalikan terlebih dahulu sebelum menjalankan eksekusi kode lainnya sehingga menghindari potensi error. Jika tidak ada await, maka ada kemungkinan kode berikutnya dapat dijalankan sebelum async selesai, sehingga ada data yang bisa saja belum masuk dan menyebabkan error.
+
+Jawaban nomor 3:
+untuk melindungi aplikasi web dari serangan CSRF (Cross-Site Request Forgery)
+
+Jawaban nomor 4:
+pembersihan di backend, dapat meningkatkan keamanan (melindungi dari serangan injeksi), lebih konsisten (frontend dapat bergantung perangkat dan browser), dan menjaga integritas data (untuk memastikan bahwa data yang disimpan valid)
+
+Jawaban nomor 5:
+1) Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX. Untuk mengubah menjadi AJAX GET, pertama saya membuat fungsi add_product dengan ajax yang mengambil data dikirimkan oleh pengguna melalui POST request secara manual. Kemudian, saya menambahkan routing tersebut ke "urls.py". Setelah itu saya juga menambahkan tag script pada "main.html" yang berisi berbagai fungsi yang akan menunjang saya untuk melakukan berbagai fungsi ajax dengan bantuan JavaScript.
