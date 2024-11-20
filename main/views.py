@@ -12,6 +12,7 @@ from django.views.decorators.http import require_POST
 from main.forms import ProductEntryForm
 from main.models import ProductEntry
 import datetime
+import json
 
 # Create your views here.
 
@@ -56,6 +57,21 @@ def create_product_entry(request):
 
     context = {'form': form}
     return render(request, "create_product_entry.html", context)
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        new_product = ProductEntry.objects.create(
+            user=request.user,
+            name=data["name"],
+            price=int(data["price"]),
+            description=data["description"]
+        )
+        new_product.save()
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
 
 @csrf_exempt
 @require_POST
